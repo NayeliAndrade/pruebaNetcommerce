@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->foreignId('user_id')->references('id')->on('users')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            $table->boolean('is_completed');
-            $table->date('start_at');
-            $table->date('expired_at');
+            $table->boolean('is_completed')->nullable()->default(0);
+            $table->date('start_at')->nullable()->default(now());
+            $table->date('expired_at')->nullable();
             $table->foreignId('company_id')->references('id')->on('companies')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CompaniesController;
+use App\Http\Controllers\TasksController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,14 +18,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/companies', [CompaniesController::class, 'index']);
 
-Route::get('/companies/{id}', function (){
-    return "companies id";
-});
+Route::get('/companies/{id}', [CompaniesController::class, 'show']);
 
-Route::get('/tasks', function (){
-    return "task create";
-});
-
-Route::post('/tasks/create/', function (){
-    return "task create";
-});
+Route::post('/tasks/create/', [TasksController::class, 'store']);

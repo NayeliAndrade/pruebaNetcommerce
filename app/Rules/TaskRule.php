@@ -15,10 +15,6 @@ class TaskRule implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        $task= Task::find('id');
-        dd($task);
-        /* if($task){
-
-        } */
+        
     }
 }
